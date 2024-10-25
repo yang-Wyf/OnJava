@@ -26,6 +26,7 @@ public class MethodReference {
             System.out.println(about + " " + msg);
         }
     }
+
     static class Helper{
         static void assist(String msg){
             System.out.println(msg);
