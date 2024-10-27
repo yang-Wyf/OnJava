@@ -11,7 +11,7 @@ public class LambdaSort {
     private interface GreatDivide {
 
         double divide(double x, double y);
-        /*
+        /**
          * default method
          * IMPLEMENTATION IS OPTIONAL
          * has an implementation which can be inherited,
@@ -39,14 +39,15 @@ public class LambdaSort {
         public int compareTo(Item o) {
             return this.getName().compareTo(o.getName());
         }
-        //		@Override
-//		public int compareTo(Item o) {
-//			return Integer.compare(this.getId(), o.getId());
-//		}
-//		@Override
-//		public int compareTo(Item o) {
-//			return Double.compare(this.getPrice(), o.getPrice())
-//		}
+       /**
+        @Override
+		public int compareTo(Item o) {
+			return Integer.compare(this.getId(), o.getId());
+		}
+		@Override
+		public int compareTo(Item o) {
+			return Double.compare(this.getPrice(), o.getPrice())
+		}*/
         public Item() {
             super();
             // TODO Auto-generated constructor stub
@@ -69,6 +70,7 @@ public class LambdaSort {
             this.price = getDoubleFromString(tokens[1]);
             this.name = tokens[2];
         }
+
         public int getId() {
             return id;
         }
@@ -87,6 +89,7 @@ public class LambdaSort {
         public void setName(String name) {
             this.name = name;
         }
+
         public int getIntFromString(String s) {
             int n = 0;
             try {
@@ -107,26 +110,21 @@ public class LambdaSort {
             }
             return n;
         }
-
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-
             sb.append("# ").append(id);
             sb.append(" $ ").append(price);
             sb.append(" ").append(name);
-
             return sb.toString();
         }
     }
+
     public static void demo() {
         System.out.println("\n\t" + LambdaSort.class.getName() + ".demo()...");
 
         LambdaSort obj = new LambdaSort();
 
-        /**
-         * List of Item objects
-         */
         List<Item> itemObjectList = new ArrayList<>(Arrays.asList(
                 obj.new Item("1,3.49,OJ"),
                 obj.new Item("3,2.49,Wheat bread"),
